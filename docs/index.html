@@ -1,0 +1,75 @@
+<html>
+
+<head>
+
+</head>
+<body>
+  <div id="stats">
+    <table>
+      <tr>
+        <td>Name</td><td>Kills</td><td>Deaths</td><td>Location</td>
+      </tr>
+      <tr v-for="player in stats">
+        <td class="name">
+          {{ player.Name }}
+        </td>
+        <td class="kills">
+          {{ player.Kills }}
+        </td>
+        <td class="deaths">
+          {{ player.Deaths }}
+        </td>
+        <td class="location">
+          {{ player.Location.X }}, {{ player.Location.Y }}, {{ player.Location.Z }}
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script>
+// Vue
+var app = new Vue({
+  el: '#stats',
+  data: {
+    stats: []
+  },
+  methods: {
+    fetch: function() {
+      $.get('http://localhost:3000/api/stats.json', function (res) {
+        this.stats = res;
+      }.bind(this));
+    }
+  },
+  mounted: function() {
+    this.fetch();
+    setInterval(function () {
+      this.fetch();
+    }.bind(this), 3000);
+  }
+});
+</script>
+<style>
+body {
+    font-family: sans-serif;
+}
+
+table tr td {
+  padding: 8px 16px;
+  min-width: 100px;
+}
+
+table tr:nth-child(odd) {
+  background-color: #eeeeee;
+}
+
+table tr:first-of-type {
+  background-color: #3F51B5;
+  color: white;
+  font-weight: bold;
+}
+</style>
+
+</html>
