@@ -1,8 +1,14 @@
 const mongodb = require('mongodb');
 const express = require('express');
+const cors = require('cors');
 
 var url = 'mongodb://localhost:27017/Playhills';
 var app = express();
+
+// CORS
+app.use(cors());
+app.options('*', cors());
+
 app.get('/', (req, res) => {
 
 });

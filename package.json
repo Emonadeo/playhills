@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Emonadeo/playhills-web#readme",
   "dependencies": {
+    "cors": "^2.8.3",
     "express": "^4.15.3",
     "mongodb": "^2.2.28"
   }
