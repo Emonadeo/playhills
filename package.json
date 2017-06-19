@@ -1,0 +1,26 @@
+{
+  "name": "playhills-web",
+  "version": "1.0.0",
+  "description": "PlayHills Admission Work",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emonadeo/playhills-web.git"
+  },
+  "keywords": [
+    "playhills"
+  ],
+  "author": "Emonadeo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Emonadeo/playhills-web/issues"
+  },
+  "homepage": "https://github.com/Emonadeo/playhills-web#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "mongodb": "^2.2.28"
+  }
+}
